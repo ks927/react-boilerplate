@@ -12,13 +12,31 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
+import Footer from 'components/Footer';
+import Game from 'components/tic-tac-toe';
+import Days from 'components/Days';
+import styled from 'styled-components';
+
+const Body = styled.div`
+    font: 14px "Century Gothic", Futura, sans-serif;
+    margin: 20px;
+    text-align: center;
+`
 
 export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
-  render() {
+    render() {
     return (
-      <h1>
+    <Body>
+      <h3>
         <FormattedMessage {...messages.header} />
-      </h1>
+      </h3>
+        <p>This is my practice with the React boilerplate</p>
+        <Days />
+        <Game />
+        <div>
+            <Footer />
+        </div>
+    </Body>
     );
   }
 }
